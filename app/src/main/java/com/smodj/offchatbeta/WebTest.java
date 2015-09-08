@@ -19,13 +19,23 @@ public class WebTest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.web_view);
         site=(WebView) findViewById(R.id.webView1);
-
+       /*runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                site.setWebViewClient(new WebViewClient());
+                site.setWebViewClient(new MyBrowser());
+                site.getSettings().setLoadsImagesAutomatically(true);
+                site.getSettings().setJavaScriptEnabled(true);
+                site.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+                site.loadUrl("http://195.154.128.104");
+            }
+        });*/
         site.setWebViewClient(new WebViewClient());
         site.setWebViewClient(new MyBrowser());
         site.getSettings().setLoadsImagesAutomatically(true);
         site.getSettings().setJavaScriptEnabled(true);
         site.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        site.loadUrl("http://10.42.0.1/smj");
+        site.loadUrl("http://smj.nismona.in/offline.html");
     }
     private class MyBrowser extends WebViewClient {
         @Override
